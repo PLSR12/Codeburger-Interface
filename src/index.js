@@ -8,5 +8,6 @@ ReactDOM.render(
   <>
     <Login />
     <GlobalStyles />
-  </>, document.getElementById('root')
+  </>,
+  document.getElementById('root')
 )

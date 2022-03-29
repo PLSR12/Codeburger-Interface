@@ -1,8 +1,13 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import api from '../../services/api'
 
 import LoginImg from '../../assets/login/image-login.svg'
 import Logo from '../../assets/login/logo-codeburger.svg'
+
+import Button from '../../components/Button'
 
 import {
   Container,
@@ -11,33 +16,60 @@ import {
   H1,
   Label,
   Input,
-  Button,
+  ErrorMessage,
   CadastrarLink
 } from './styles'
 
 function Login () {
+  const schema = Yup.object().shape({
+    email: Yup.string()
+      .email('Digite um email válido')
+      .required('É necessário o uso de um email'),
+    password: Yup.string()
+      .required('A senha é obrigátoria')
+      .min(6, 'A senha deve ter pelo menos 6 digítos')
+  })
+
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors }
-  } = useForm()
+  } = useForm({
+    resolver: yupResolver(schema)
+  })
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = async clientData => {
+    const response = await api.post('http://localhost:3001/sessions', {
+      email: clientData.email,
+      password: clientData.password
+    })
+    console.log(response)
+  }
+
   return (
     <Container>
       <LoginImage src={LoginImg} alt='imagem hamburger' />
       <ContainerItens>
         <img src={Logo} alt='logo-codeburger' />
         <H1>Login</H1>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label> Email</Label>
-          <Input type="email" {...register('email')} />
+          <Input
+            type='email'
+            {...register('email')}
+            error={errors.email?.message}
+          />
+          <ErrorMessage> {errors.email?.message}</ErrorMessage>
 
           <Label> Senha</Label>
-          <Input type="password" {...register('password')} />
+          <Input
+            type='password'
+            {...register('password')}
+            error={errors.password?.message}
+          />
+          <ErrorMessage> {errors.password?.message}</ErrorMessage>
 
-          <Button type='submit'> Entrar </Button>
+          <Button type='submit' style={{marginTop:66, marginLeft:104}}> Entrar </Button>
         </form>
         <CadastrarLink>
           Não possui conta?
