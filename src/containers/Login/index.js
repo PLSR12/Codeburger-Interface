@@ -16,21 +16,33 @@ import {
 } from './styles'
 
 function Login () {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm()
+
+  const onSubmit = data => console.log(data)
   return (
     <Container>
       <LoginImage src={LoginImg} alt='imagem hamburger' />
       <ContainerItens>
-        <img src={Logo} alt='logo-codeburger' /> ;<H1>Login</H1>
-        <Label> Email</Label>
-        <Input />
-        <Label> Senha</Label>
-        <Input />
-        <Button> Entrar </Button>
+        <img src={Logo} alt='logo-codeburger' />
+        <H1>Login</H1>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Label> Email</Label>
+          <Input type="email" {...register('email')} />
+
+          <Label> Senha</Label>
+          <Input type="password" {...register('password')} />
+
+          <Button type='submit'> Entrar </Button>
+        </form>
         <CadastrarLink>
-          {' '}
           Não possui conta?
           <p />
-          Se cadastre{' '}
+          Se cadastre
         </CadastrarLink>
       </ContainerItens>
     </Container>

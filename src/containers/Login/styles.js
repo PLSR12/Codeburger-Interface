@@ -26,6 +26,11 @@ img {
     width: 338px;
     height: 125px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
 `
 export const H1 = styled.h1`
     font-style: normal;
@@ -40,7 +45,7 @@ export const H1 = styled.h1`
 export const Label = styled.p`
 margin-top:17px;
 margin-bottom:5px;
-margin-left:110px;
+margin-left:20px;
 
 font-style: normal;
 font-weight: 500;
