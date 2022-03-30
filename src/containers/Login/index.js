@@ -1,7 +1,9 @@
 import React from 'react'
+import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+
 import api from '../../services/api'
 
 import LoginImg from '../../assets/login/image-login.svg'
@@ -39,11 +41,33 @@ function Login () {
   })
 
   const onSubmit = async clientData => {
-    const response = await api.post('http://localhost:3001/sessions', {
-      email: clientData.email,
-      password: clientData.password
-    })
-    console.log(response)
+    try {
+      const response = await api.post('/sessions', {
+        email: clientData.email,
+        password: clientData.password
+      }) 
+      toast.success('Login Efetuado!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+
+      console.log(response)
+    } catch (err){
+      toast.error('Verifique seus Dados!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
   }
 
   return (
@@ -69,7 +93,10 @@ function Login () {
           />
           <ErrorMessage> {errors.password?.message}</ErrorMessage>
 
-          <Button type='submit' style={{marginTop:66, marginLeft:104}}> Entrar </Button>
+          <Button type='submit' style={{ marginTop: 66, marginLeft: 104 }}>
+            {' '}
+            Entrar{' '}
+          </Button>
         </form>
         <CadastrarLink>
           Não possui conta?

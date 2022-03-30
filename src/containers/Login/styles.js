@@ -2,14 +2,17 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 `
 
 export const LoginImage = styled.img`
-  max-height: 110vh;
+  width: 100vw;
+  height: 100, 5vh;
+  display: block;
+  justify-content: center;
 `
 
 export const ContainerItens = styled.div`
@@ -73,7 +76,6 @@ export const ErrorMessage = styled.p`
   margin-left: 5px;
   color: #cc1717;
 `
-
 
 export const CadastrarLink = styled.p`
   font-style: normal;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
@@ -32,7 +33,7 @@ function Register () {
       .min(6, 'A senha deve ter pelo menos 6 digítos'),
     confirmPassword: Yup.string()
       .required('A senha é obrigatória')
-      .oneOf([Yup.ref('password')],'As senhas devem ser iguais')
+      .oneOf([Yup.ref('password')], 'As senhas devem ser iguais')
   })
 
   const {
@@ -44,12 +45,33 @@ function Register () {
   })
 
   const onSubmit = async clientData => {
-    const response = await api.post('/users', {
-      name: clientData.name,
-      email: clientData.email,
-      password: clientData.password
-    })
-    console.log(response)
+    try {
+      const response = await api.post('/users', {
+        name: clientData.name,
+        email: clientData.email,
+        password: clientData.password
+      })
+      toast.success('Cadastro Efetuado!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
+      console.log(response)
+    } catch (err) {
+      toast.error('Verifique seus Dados!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
+    }
   }
 
   return (
