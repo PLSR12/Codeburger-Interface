@@ -28,8 +28,8 @@ export const Container = styled.div`
 `
 
 export const OffersImage = styled.img`
-  width: 273px;
-  height: 65px;
+  width: 38vh;
+  height: 9vh;
   border: none;
 `
 export const ContainerItems = styled.div`
@@ -53,7 +53,7 @@ export const H2 = styled.h2`
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 120%;
 
   margin: 0px 8px;
@@ -62,7 +62,7 @@ export const H2 = styled.h2`
 `
 
 export const Image = styled.img`
-  width: 200px;
+  width: 28vh;
   border-radius: 10px;
 `
 
