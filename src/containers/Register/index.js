@@ -48,7 +48,7 @@ function Register () {
   const onSubmit = async clientData => {
     try {
       const { status } = await api.post(
-        '/users',
+        'users',
         {
           name: clientData.name,
           email: clientData.email,
