@@ -3,6 +3,7 @@ import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+import { Link } from 'react-router-dom'
 
 import api from '../../services/api'
 
@@ -25,13 +26,12 @@ import {
 } from './styles'
 
 function Login () {
-  const { putUserData, userData } = useUser()
-  console.log(userData)
+  const { putUserData } = useUser()
 
   const schema = Yup.object().shape({
     email: Yup.string()
       .email('Digite um email válido')
-      .required('É necessário o uso de um email'),
+      .required('O email é obrigatório'),
     password: Yup.string()
       .required('A senha é obrigátoria')
       .min(6, 'A senha deve ter pelo menos 6 digítos')
@@ -83,14 +83,17 @@ function Login () {
           <ErrorMessage> {errors.password?.message}</ErrorMessage>
 
           <Button type='submit' style={{ marginTop: 66, marginLeft: 104 }}>
-            {' '}
-            Entrar{' '}
+            Entrar
           </Button>
         </form>
         <CadastrarLink>
-          Não possui conta?
-          <p />
-          Se cadastre
+          Não possui conta? {''}
+          <Link
+            style={{ color: 'white' }}
+            to='/register'
+          >
+            Se cadastre
+          </Link>
         </CadastrarLink>
       </ContainerItens>
     </Container>
