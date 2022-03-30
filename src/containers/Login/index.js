@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 import api from '../../services/api'
 
@@ -52,7 +52,6 @@ function Login () {
         password: clientData.password
       })
       toast.success('Login Efetuado!')
-
       putUserData(data)
     } catch (err) {
       toast.error('Verifique seus Dados!')
@@ -82,7 +81,7 @@ function Login () {
           />
           <ErrorMessage> {errors.password?.message}</ErrorMessage>
 
-          <Button type='submit' style={{ marginTop: 66, marginLeft: 104 }}>
+          <Button type='submit' style={{ marginTop: 66, marginLeft: 104 }} >
             Entrar
           </Button>
         </form>
