@@ -6,6 +6,8 @@ import * as Yup from 'yup'
 
 import api from '../../services/api'
 
+import { useUser } from '../../hooks/UserContext'
+
 import LoginImg from '../../assets/login/image-login.svg'
 import Logo from '../../assets/login/logo-codeburger.svg'
 
@@ -23,6 +25,9 @@ import {
 } from './styles'
 
 function Login () {
+  const { putUserData, userData } = useUser()
+  console.log(userData)
+
   const schema = Yup.object().shape({
     email: Yup.string()
       .email('Digite um email válido')
@@ -42,31 +47,15 @@ function Login () {
 
   const onSubmit = async clientData => {
     try {
-      const response = await api.post('/sessions', {
+      const { data } = await api.post('/sessions', {
         email: clientData.email,
         password: clientData.password
-      }) 
-      toast.success('Login Efetuado!', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
+      })
+      toast.success('Login Efetuado!')
 
-      console.log(response)
-    } catch (err){
-      toast.error('Verifique seus Dados!', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
+      putUserData(data)
+    } catch (err) {
+      toast.error('Verifique seus Dados!')
     }
   }
 

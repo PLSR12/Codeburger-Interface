@@ -3,10 +3,10 @@ import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
+
 import api from '../../services/api'
 
 import Logo from '../../assets/login/logo-codeburger.svg'
-
 import RegisterImg from '../../assets/login/image-cadastro-burger.svg'
 
 import Button from '../../components/Button'
@@ -46,31 +46,26 @@ function Register () {
 
   const onSubmit = async clientData => {
     try {
-      const response = await api.post('/users', {
-        name: clientData.name,
-        email: clientData.email,
-        password: clientData.password
-      })
-      toast.success('Cadastro Efetuado!', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined
-      })
-      console.log(response)
+      const { status } = await api.post(
+        '/users',
+        {
+          name: clientData.name,
+          email: clientData.email,
+          password: clientData.password
+        },
+        { validateStatus: () => true }
+      )
+
+      if (status === 201 || status === 200) {
+        toast.success('Cadastro criado com sucesso')
+      }
+      if (status === 409) {
+        toast.error('E-mail já cadastrado! Faça Login para continuar')
+      } else {
+        throw new Error()
+      }
     } catch (err) {
-      toast.error('Verifique seus Dados!', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined
-      })
+      toast.error('Falha no sistema! Tente novamente')
     }
   }
 
