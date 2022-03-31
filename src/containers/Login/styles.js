@@ -1,32 +1,33 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  display: flex;
   width: 100vw;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
 `
 
 export const LoginImage = styled.img`
   width: 100vw;
-  height: 100, 5vh;
-  display: block;
+  height: 100vh;
+  display: flex;
   justify-content: center;
+  margin: 0 auto;
 `
 
 export const ContainerItens = styled.div`
+  display: flex;
   background-color: #373737;
   width: 100vw;
   height: 100vh;
-  padding: 25px 75px;
+  padding: 3vh 9vh;
   flex-direction: column;
-  display: flex;
   justify-content: center;
 
   img {
-    width: 338px;
-    height: 125px;
+    width: 47vh;
+    height: 17vh;
   }
 
   form {
@@ -41,7 +42,7 @@ export const H1 = styled.h1`
   line-height: 28px;
   color: #ffffff;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 11vh;
 `
 
 export const Label = styled.p`
@@ -58,8 +59,8 @@ export const Label = styled.p`
 `
 
 export const Input = styled.input`
-  width: 390px;
-  height: 38px;
+  width: 54vh;
+  height: 5vh;
 
   background: #ffffff;
   box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
@@ -83,7 +84,7 @@ export const CadastrarLink = styled.p`
   font-size: 14px;
   line-height: 16px;
 
-  margin-left: 110px;
+  margin-left: 15vh;
   margin-top: 32px;
   cursor: pointer;
 

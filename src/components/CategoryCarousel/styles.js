@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #EFEFEF;
+  background-color: #efefef;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -28,8 +28,9 @@ export const Container = styled.div`
 `
 
 export const CategoryImage = styled.img`
-  width: 412px;
-height: 71px;
+  width: 38vh;
+  height: 9vh;
+  border: none;
 `
 export const ContainerItems = styled.div`
   display: flex;
@@ -37,7 +38,7 @@ export const ContainerItems = styled.div`
 `
 
 export const Image = styled.img`
-  width: 200px;
+  width: 28vh;
   border-radius: 10px;
 `
 
