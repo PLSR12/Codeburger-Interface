@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-import CardProducts from '../../components/CardProducts'
-
 import api from '../../services/api'
 
 import BannerProduct from '../../assets/home/banner-productpage(2).svg'
 
 import formatCurrency from '../../utils/formatCurrency'
+
+import { CardProducts } from '../../components'
 
 import {
   Container,
@@ -16,7 +16,7 @@ import {
   ProductsContainer
 } from './styles'
 
-function Products () {
+export function Products () {
   const [categories, setCategories] = useState([])
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProduct] = useState([])
@@ -84,5 +84,3 @@ function Products () {
     </Container>
   )
 }
-
-export default Products

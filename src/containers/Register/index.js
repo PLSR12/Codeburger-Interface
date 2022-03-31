@@ -1,16 +1,17 @@
 import React from 'react'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { Link } from 'react-router-dom'
 
 import api from '../../services/api'
 
 import Logo from '../../assets/login/logo-codeburger.svg'
 import RegisterImg from '../../assets/login/image-cadastro-burger.svg'
 
-import Button from '../../components/Button'
+import { Button } from '../../components'
 
 import {
   Container,
@@ -23,7 +24,7 @@ import {
   LogarLink
 } from './styles'
 
-function Register () {
+export function Register () {
   const schema = Yup.object().shape({
     name: Yup.string().required('O seu nome é obrigatório'),
     email: Yup.string()
@@ -124,4 +125,3 @@ function Register () {
   )
 }
 
-export default Register

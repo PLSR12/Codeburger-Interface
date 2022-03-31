@@ -1,9 +1,10 @@
 import React from 'react'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
+import { Link, useHistory } from 'react-router-dom'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { Link , useHistory } from 'react-router-dom'
 
 import api from '../../services/api'
 
@@ -12,7 +13,7 @@ import { useUser } from '../../hooks/UserContext'
 import LoginImg from '../../assets/login/image-login.svg'
 import Logo from '../../assets/login/logo-codeburger.svg'
 
-import Button from '../../components/Button'
+import { Button } from '../../components'
 
 import {
   Container,
@@ -25,8 +26,7 @@ import {
   CadastrarLink
 } from './styles'
 
-function Login () {
-
+export function Login () {
   const history = useHistory()
   const { putUserData } = useUser()
 
@@ -98,5 +98,3 @@ function Login () {
     </Container>
   )
 }
-
-export default Login
