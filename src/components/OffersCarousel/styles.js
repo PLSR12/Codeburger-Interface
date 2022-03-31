@@ -29,7 +29,7 @@ export const Container = styled.div`
 
 export const OffersImage = styled.img`
   width: 38vh;
-  height: 9vh;
+  height: 10vh;
   border: none;
 `
 export const ContainerItems = styled.div`

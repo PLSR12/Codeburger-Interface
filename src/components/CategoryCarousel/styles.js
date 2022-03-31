@@ -28,8 +28,8 @@ export const Container = styled.div`
 `
 
 export const CategoryImage = styled.img`
-  width: 38vh;
-  height: 9vh;
+  width: 40vh;
+  height: 11vh;
   border: none;
 `
 export const ContainerItems = styled.div`
