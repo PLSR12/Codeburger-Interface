@@ -2,15 +2,17 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  width: 100vw;
+  min-width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  padding: 0 auto;
 `
 
 export const LoginImage = styled.img`
-  width: 100vw;
-  height: 100vh;
+  width: 80vw;
+  height: 105vh;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -19,17 +21,15 @@ export const LoginImage = styled.img`
 export const ContainerItens = styled.div`
   display: flex;
   background-color: #373737;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
-  padding: 3vh 9vh;
+  padding: 16vh 19vh;
   flex-direction: column;
   justify-content: center;
-
   img {
     width: 47vh;
     height: 17vh;
   }
-
   form {
     display: flex;
     flex-direction: column;
@@ -49,19 +49,16 @@ export const Label = styled.p`
   margin-top: 17px;
   margin-bottom: 5px;
   margin-left: 20px;
-
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 14px;
-
   color: #ffffff;
 `
 
 export const Input = styled.input`
   width: 54vh;
   height: 5vh;
-
   background: #ffffff;
   box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
   border-radius: 5px;
@@ -83,10 +80,8 @@ export const CadastrarLink = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-
   margin-left: 15vh;
   margin-top: 32px;
   cursor: pointer;
-
   color: #ffffff;
 `

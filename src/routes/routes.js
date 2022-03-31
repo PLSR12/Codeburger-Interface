@@ -13,7 +13,7 @@ function AppRoutes () {
       <Switch>
         <Route path='/login' component={Login} />
         <Route path='/cadastro' component={Register} />
-        <PrivateRoute exact path='/' component={Home} />
+        <PrivateRoute exact path='/home' component={Home} />
         <PrivateRoute exact path='/produtos' component={Products} />
       </Switch>
     </Router>

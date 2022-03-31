@@ -55,7 +55,7 @@ function Login () {
       })
       toast.success('Login Efetuado!')
       putUserData(data)
-      history.push('/')
+      history.push('/home')
     } catch (err) {
       toast.error('Verifique seus Dados!')
     }
@@ -90,7 +90,7 @@ function Login () {
         </form>
         <CadastrarLink>
           Não possui conta? {''}
-          <Link style={{ color: 'white' }} to='/register'>
+          <Link style={{ color: 'white' }} to='/cadastro'>
             Se cadastre
           </Link>
         </CadastrarLink>

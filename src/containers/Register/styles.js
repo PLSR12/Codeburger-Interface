@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  max-height: 100.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +10,7 @@ export const Container = styled.div`
 
 export const RegisterImage = styled.img`
   width: 100vw;
-  height: 100, 5vh;
+  height: 105vh;
   display: block;
   justify-content: center;
 `
@@ -20,7 +19,7 @@ export const ContainerItens = styled.div`
   background-color: #373737;
   width: 100vw;
   height: 100vh;
-  padding: 25px 75px;
+  padding: 20px 165px;
   flex-direction: column;
   display: flex;
   justify-content: center;
