@@ -4,14 +4,14 @@ import { ToastContainer } from 'react-toastify'
 
 import AppRoutes from './routes/routes'
 import GlobalStyles from './styles/GlobalStyles'
-import { UserProvider } from './hooks/UserContext'
+import { AppProvider } from './hooks'
 
 ReactDOM.render(
   <>
-    <UserProvider>
+    <AppProvider>
       <AppRoutes/>
-    </UserProvider>
-    <ToastContainer autoClose={2000} theme='colored' />
+    </AppProvider>
+    <ToastContainer autoClose={1500} theme='colored' />
     <GlobalStyles />
   </>,
   document.getElementById('root')
