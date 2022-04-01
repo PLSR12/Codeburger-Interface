@@ -1,6 +1,6 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { toast } from 'react-toastify'
 
 import { useCart } from '../../hooks/CartContext'
 
@@ -10,7 +10,6 @@ import { Button } from '../'
 
 export function CardProducts ({ product }) {
   const { putProductsInCart } = useCart()
-  const { push } = useHistory()
 
   return (
     <Container>
@@ -21,11 +20,13 @@ export function CardProducts ({ product }) {
         <Button
           onClick={() => {
             putProductsInCart(product)
-            push('/carrinho')
+            toast.success('Adicionado ao carrinho!', {
+              position: 'top-right',
+              autoClose: 1000,
+            })
           }}
         >
-          {' '}
-          Adicionar{' '}
+          Adicionar
         </Button>
       </div>
     </Container>

@@ -79,7 +79,7 @@ export const Button = styled.button`
   border: none;
 
   font-family: 'Source Sans Pro';
-  font-style: normal;
+  font-style: bold;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
