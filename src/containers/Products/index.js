@@ -6,7 +6,7 @@ import BannerProduct from '../../assets/home/banner-productpage(2).svg'
 
 import formatCurrency from '../../utils/formatCurrency'
 
-import { CardProducts } from '../../components'
+import { CardProducts, Header } from '../../components'
 
 import {
   Container,
@@ -58,6 +58,7 @@ export function Products () {
 
   return (
     <Container>
+      <Header />
       <HomeImg src={BannerProduct} alt='banner produtos' />
       <CategoriesMenu>
         {categories &&
