@@ -35,6 +35,7 @@ export const OffersImage = styled.img`
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
+  align-items:center;
 `
 
 export const H1 = styled.h1`
@@ -44,7 +45,7 @@ export const H1 = styled.h1`
   font-size: 18px;
   line-height: 120%;
 
-  margin: 8px 0px;
+  margin: 10px 0px;
 
   color: #424242;
 `
@@ -67,7 +68,7 @@ export const Image = styled.img`
 `
 
 export const Button = styled.button`
-  margin-top: 16px;
+  margin-top: 5px;
   background: #9758a6;
   box-shadow: 0px 5px 10px rgba(151, 88, 166, 0.22),
     0px 20px 40px rgba(151, 88, 166, 0.24);
