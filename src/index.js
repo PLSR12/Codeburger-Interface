@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify'
 
 import AppRoutes from './routes/routes'
 import GlobalStyles from './styles/GlobalStyles'
-import { AppProvider } from './hooks'
+import { AppProvider} from './hooks'
 
 ReactDOM.render(
   <>

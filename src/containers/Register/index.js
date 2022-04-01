@@ -61,13 +61,11 @@ export function Register () {
       if (status === 201 || status === 200) {
         toast.success('Cadastro criado com sucesso')
       }
-      if (status === 409) {
+      else if (status === 409) {
         toast.error('E-mail já cadastrado! Faça Login para continuar')
-      } else {
-        throw new Error()
       }
     } catch (err) {
-      toast.error('Falha no sistema! Tente novamente')
+      
     }
   }
 
@@ -124,4 +122,3 @@ export function Register () {
     </Container>
   )
 }
-
