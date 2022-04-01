@@ -17,7 +17,7 @@ import {
 } from './styles'
 
 export function Header () {
-  const { logout } = useUser()
+  const { logout,userData } = useUser()
 
   const {
     push,
@@ -51,8 +51,8 @@ export function Header () {
           <img src={Person} alt='boneco' />
         </PageLink>
 
-        <ContainerText>
-          <p> Olá, Pedro </p>
+        <ContainerText >
+        <p> Olá, {userData.name} </p> 
           <PageLinkExit onClick={logoutUser}> Sair </PageLinkExit>
         </ContainerText>
       </ContainerRight>

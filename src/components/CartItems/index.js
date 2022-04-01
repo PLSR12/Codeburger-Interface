@@ -7,8 +7,8 @@ import { Container, Header, Body, ProductImage, EmptyCart } from './styles'
 import { useCart } from '../../hooks/CartContext'
 
 export function CartItems () {
-  const { cartProducts,increaseProducts,creaseProducts } = useCart()
-  console.log(cartProducts)
+  const { cartProducts, increaseProducts, decreaseProducts } = useCart()
+
   return (
     <Container>
       <Header>
@@ -24,7 +24,7 @@ export function CartItems () {
             <p> {product.name}</p>
             <p> {formatCurrency(product.price)}</p>
             <div className='quantity-container'>
-              <button  onClick={() => creaseProducts(product.id)}> - </button>
+              <button onClick={() => decreaseProducts(product.id)}> - </button>
               <p> {product.quantity}</p>
               <button onClick={() => increaseProducts(product.id)}> + </button>
             </div>
