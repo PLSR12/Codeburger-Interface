@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  height: 72px;
+  height: 70px;
   background-color: #ffff;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -40,16 +40,17 @@ export const ContainerText = styled.div`
 export const PageLink = styled.a`
   cursor: pointer;
   text-decoration: none;
-  color: #555555;
+  color: ${props => (props.isActive ? '#9758a6' : '#555555')};
   font-size: 16px;
   line-height: 19px;
+  font-weight: ${props => (props.isActive ? 'bold' : 'normal')};
 `
 
 export const PageLinkExit = styled.a`
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  
+
   cursor: pointer;
 
   color: #9758a6;

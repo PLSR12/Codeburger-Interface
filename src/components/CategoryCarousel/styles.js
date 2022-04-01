@@ -35,6 +35,7 @@ export const CategoryImage = styled.img`
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `
 
 export const Image = styled.img`
@@ -57,7 +58,6 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 100%;
   text-align: center;
 
   cursor: pointer;
