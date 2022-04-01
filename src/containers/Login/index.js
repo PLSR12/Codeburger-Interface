@@ -48,17 +48,22 @@ export function Login () {
   })
 
   const onSubmit = async clientData => {
-    try {
-      const { data } = await api.post('sessions', {
+    const { data } = await toast.promise(
+      api.post('sessions', {
         email: clientData.email,
         password: clientData.password
-      })
-      toast.success('Login Efetuado!')
-      putUserData(data)
-      history.push('/home')
-    } catch (err) {
-      toast.error('Verifique seus Dados!')
-    }
+      }),
+      {
+        pending: 'Verificando seus dados',
+        success: 'Login Efetuado!',
+        error: 'Verifique seus Dados!'
+      }
+    )
+    putUserData(data)
+
+    setTimeout(() => {
+      history.push('/')
+    },2000)
   }
 
   return (
