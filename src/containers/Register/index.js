@@ -14,7 +14,6 @@ import { Button } from '../../components'
 
 import {
   Container,
-  ContainerImage,
   ContainerItens,
   H1,
   Label,
@@ -59,20 +58,14 @@ export function Register () {
 
       if (status === 201 || status === 200) {
         toast.success('Cadastro criado com sucesso')
-      }
-      else if (status === 409) {
+      } else if (status === 409) {
         toast.error('E-mail já cadastrado! Faça Login para continuar')
       }
-    } catch (err) {
-      
-    }
+    } catch (err) {}
   }
 
   return (
     <Container>
-      <ContainerImage >
-
-      </ContainerImage>
       <ContainerItens>
         <img src={Logo} alt='logo-codeburger' />
         <H1>Cadastre-se</H1>
@@ -109,13 +102,16 @@ export function Register () {
           />
           <ErrorMessage> {errors.confirmPassword?.message}</ErrorMessage>
 
-          <Button type='submit' style={{ marginTop: 20, marginLeft: 104 }}>
+          <Button
+            type='submit'
+            style={{ marginTop: '5vh', marginLeft: '14vh' }}
+          >
             Entrar
           </Button>
         </form>
         <LoginLink>
           Já possui conta? {''}
-          <Link style={{ color: 'white' }} to='/login'>
+          <Link style={{ color: 'white', textDecoration: 'none' }} to='/login'>
             Entre
           </Link>
         </LoginLink>
