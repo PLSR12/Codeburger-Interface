@@ -26,9 +26,9 @@ export const ContainerRight = styled.div`
 
 export const ContainerText = styled.div`
   p {
+    flex-wrap: wrap;
     font-weight: 300;
     font-size: 1rem;
-    line-height: 16px;
     align-items: center;
     color: #555555;
   }

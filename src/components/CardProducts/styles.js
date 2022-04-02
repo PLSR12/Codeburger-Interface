@@ -6,9 +6,9 @@ export const Container = styled.div`
   box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
   border-radius: 30px;
   display: flex;
-  gap: 12px;
-  padding: 16px;
-  width: max-content;
+  gap: 15px;
+  padding: 15px;
+  max-width: min-content;
   div {
     display: flex;
     flex-direction: column;
@@ -23,15 +23,12 @@ export const Image = styled.img`
 `
 
 export const ProductName = styled.p`
-  font-style: normal;
-  font-weight: normal;
+  flex-wrap: wrap;
   font-size: 1rem;
-  line-height: 19px;
   color: #000000;
 `
 
 export const ProductPrice = styled.p`
-  font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   line-height: 21px;
