@@ -28,14 +28,16 @@ export const Container = styled.div`
 `
 
 export const OffersImage = styled.img`
-  width: 38vh;
+  max-width: 60vh;
+  width: 30vh;
+  max-height: 60vh;
   height: 10vh;
   border: none;
 `
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
 `
 
 export const H1 = styled.h1`
@@ -63,8 +65,10 @@ export const H2 = styled.h2`
 `
 
 export const Image = styled.img`
-  width: 28vh;
-  border-radius: 10px;
+  max-width: 28vh;
+  max-height: 20vw;
+  min-height: 25vh;
+  border-radius: 1vw;
 `
 
 export const Button = styled.button`

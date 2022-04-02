@@ -20,6 +20,7 @@ import {
   H1,
   Label,
   Input,
+  ContainerButton,
   ErrorMessage,
   CadastrarLink
 } from './styles'
@@ -85,14 +86,22 @@ export function Login () {
             error={errors.password?.message}
           />
           <ErrorMessage> {errors.password?.message}</ErrorMessage>
-
-          <Button type='submit' style={{ marginTop: '6vh', marginLeft: 105}}>
-            Entrar
-          </Button>
+          <ContainerButton>
+            <Button type='submit' style={{ marginTop: '6vh' }}>
+              Entrar
+            </Button>
+          </ContainerButton>
         </form>
         <CadastrarLink>
           Não possui conta? {''}
-          <Link style={{ color: 'white',  alignItems: 'center', textDecoration:'none' }} to='/cadastro'>
+          <Link
+            style={{
+              color: 'white',
+              alignItems: 'center',
+              textDecoration: 'none'
+            }}
+            to='/cadastro'
+          >
             Se cadastre
           </Link>
         </CadastrarLink>

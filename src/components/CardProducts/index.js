@@ -18,11 +18,12 @@ export function CardProducts ({ product }) {
         <ProductName> {product.name} </ProductName>
         <ProductPrice> {product.formatedPrice}</ProductPrice>
         <Button
+          style={{ width: '1rem' }}
           onClick={() => {
             putProductsInCart(product)
             toast.success('Adicionado ao carrinho!', {
               position: 'top-right',
-              autoClose: 1000,
+              autoClose: 1000
             })
           }}
         >

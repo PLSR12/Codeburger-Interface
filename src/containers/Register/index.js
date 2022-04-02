@@ -15,6 +15,7 @@ import { Button } from '../../components'
 import {
   Container,
   ContainerItens,
+  ContainerButton,
   H1,
   Label,
   Input,
@@ -101,13 +102,14 @@ export function Register () {
             error={errors.confirmPassword?.message}
           />
           <ErrorMessage> {errors.confirmPassword?.message}</ErrorMessage>
-
-          <Button
-            type='submit'
-            style={{ marginTop: '5vh', marginLeft: '12vh' }}
-          >
-            Entrar
-          </Button>
+          <ContainerButton>
+            <Button
+              type='submit'
+              style={{ marginTop: '4vh' }}
+            >
+              Entrar
+            </Button>
+          </ContainerButton>
         </form>
         <LoginLink>
           Já possui conta? {''}

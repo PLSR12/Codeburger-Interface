@@ -73,8 +73,16 @@ export const LoginLink = styled.p`
   font-weight: 400;
   font-size: 14px;
   margin-left: -15vw;
-  margin-top: 5vh;
+  margin-top: 4vh;
   text-decoration: none;
   cursor: pointer;
   color: #ffffff;
+`
+
+export const ContainerButton = styled.div`
+  max-width: 75vw;
+  width: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `

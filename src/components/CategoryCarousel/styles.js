@@ -29,7 +29,9 @@ export const Container = styled.div`
 `
 
 export const CategoryImage = styled.img`
+  max-width:60vh;
   width: 40vh;
+  max-height: 60vh;
   height: 11vh;
   border: none;
 `
@@ -40,8 +42,10 @@ export const ContainerItems = styled.div`
 `
 
 export const Image = styled.img`
-  width: 28vh;
-  border-radius: 10px;
+  max-width: 28vh;
+  max-height: 20vw;
+  min-height:25vh;
+  border-radius: 1vw;
 `
 
 export const Button = styled(Link)`
