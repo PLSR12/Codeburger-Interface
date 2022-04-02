@@ -86,13 +86,13 @@ export function Login () {
           />
           <ErrorMessage> {errors.password?.message}</ErrorMessage>
 
-          <Button type='submit' style={{ marginTop: 66, marginLeft: 104 }}>
+          <Button type='submit' style={{ marginTop: '6vh', marginLeft: 105}}>
             Entrar
           </Button>
         </form>
         <CadastrarLink>
           Não possui conta? {''}
-          <Link style={{ color: 'white',  alignItems: 'center' }} to='/cadastro'>
+          <Link style={{ color: 'white',  alignItems: 'center', textDecoration:'none' }} to='/cadastro'>
             Se cadastre
           </Link>
         </CadastrarLink>

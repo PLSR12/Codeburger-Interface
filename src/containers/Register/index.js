@@ -104,7 +104,7 @@ export function Register () {
 
           <Button
             type='submit'
-            style={{ marginTop: '5vh', marginLeft: '14vh' }}
+            style={{ marginTop: '5vh', marginLeft: '12vh' }}
           >
             Entrar
           </Button>
