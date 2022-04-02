@@ -35,19 +35,10 @@ export const CategoryButton = styled.button`
   padding-bottom: 5px;
 `
 export const ProductsContainer = styled.div`
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, max( 1fr));
-  grid-gap: 2vh;
-  padding: 5vh;
-  justify-items: center;
-  margin-bottom: 24px; */
-
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
   align-items: center;
-  gap: 2vh;
-  padding: 5vh;
-  margin-bottom: 24px; 
-
+  gap: 3vw;
+  padding: 4vw;
 `

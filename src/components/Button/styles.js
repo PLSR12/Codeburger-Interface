@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 export const ComponentButton = styled.button`
-  max-width: 12vw;
   min-width: 15vh;
-  height: 36px;
+  height: 5vh;
   background: #9758a6;
   border-radius: 20px;
   border: none;
