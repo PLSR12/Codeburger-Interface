@@ -10,14 +10,12 @@ import api from '../../services/api'
 
 import { useUser } from '../../hooks/UserContext'
 
-import LoginImg from '../../assets/login/image-login.svg'
 import Logo from '../../assets/login/logo-codeburger.svg'
 
 import { Button } from '../../components'
 
 import {
   Container,
-  LoginImage,
   ContainerItens,
   H1,
   Label,
@@ -63,12 +61,11 @@ export function Login () {
 
     setTimeout(() => {
       history.push('/')
-    },2000)
+    }, 2000)
   }
 
   return (
     <Container>
-      <LoginImage src={LoginImg} alt='imagem hamburger' />
       <ContainerItens>
         <img src={Logo} alt='logo-codeburger' />
         <H1>Login</H1>
@@ -95,7 +92,7 @@ export function Login () {
         </form>
         <CadastrarLink>
           Não possui conta? {''}
-          <Link style={{ color: 'white' }} to='/cadastro'>
+          <Link style={{ color: 'white',  alignItems: 'center' }} to='/cadastro'>
             Se cadastre
           </Link>
         </CadastrarLink>

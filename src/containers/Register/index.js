@@ -9,19 +9,18 @@ import * as Yup from 'yup'
 import api from '../../services/api'
 
 import Logo from '../../assets/login/logo-codeburger.svg'
-import RegisterImg from '../../assets/login/image-cadastro-burger.svg'
 
 import { Button } from '../../components'
 
 import {
   Container,
-  RegisterImage,
+  ContainerImage,
   ContainerItens,
   H1,
   Label,
   Input,
   ErrorMessage,
-  LogarLink
+  LoginLink
 } from './styles'
 
 export function Register () {
@@ -71,7 +70,9 @@ export function Register () {
 
   return (
     <Container>
-      <RegisterImage src={RegisterImg} alt='imagem hamburger' />
+      <ContainerImage >
+
+      </ContainerImage>
       <ContainerItens>
         <img src={Logo} alt='logo-codeburger' />
         <H1>Cadastre-se</H1>
@@ -112,12 +113,12 @@ export function Register () {
             Entrar
           </Button>
         </form>
-        <LogarLink>
+        <LoginLink>
           Já possui conta? {''}
           <Link style={{ color: 'white' }} to='/login'>
             Entre
           </Link>
-        </LogarLink>
+        </LoginLink>
       </ContainerItens>
     </Container>
   )

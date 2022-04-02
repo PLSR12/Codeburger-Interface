@@ -1,31 +1,33 @@
 import styled from 'styled-components'
 
+import LoginImg from '../../assets/login/image-login.svg'
+
 export const Container = styled.div`
   display: flex;
-  min-width: 100vw;
+  width: 100%;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  padding: 0 auto;
+  box-align: center;
 `
 
-export const LoginImage = styled.img`
-  width: 80vw;
-  height: 105vh;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
+export const ContainerImg = styled.div`
+display: flex;
+width: 100%;
+height: 100%;
+background: url('${LoginImg}');
+    
+    background-size: cover;
 `
 
 export const ContainerItens = styled.div`
   display: flex;
   background-color: #373737;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
-  padding: 16vh 19vh;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   img {
     width: 47vh;
     height: 17vh;
@@ -33,6 +35,7 @@ export const ContainerItens = styled.div`
   form {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
   }
 `
 export const H1 = styled.h1`
@@ -57,7 +60,8 @@ export const Label = styled.p`
 `
 
 export const Input = styled.input`
-  width: 54vh;
+  max-width: 75vw;
+  width: 55vh;
   height: 5vh;
   background: #ffffff;
   box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
@@ -79,9 +83,8 @@ export const CadastrarLink = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 16px;
-  margin-left: 15vh;
-  margin-top: 32px;
+  margin-left: -10vw;
+  margin-top: 5vh;
   cursor: pointer;
   color: #ffffff;
 `

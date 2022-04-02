@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 export const ComponentButton = styled.button`
-  width: 182px;
-  height: 36px;
+  max-width: 12vw;
+  min-width: 15vh;
+  height: 4vh;
 
   background: #9758a6;
-  border-radius: 20px;
+  border-radius: 2vh;
   border: none;
 
   font-style: normal;

@@ -1,55 +1,55 @@
 import styled from 'styled-components'
 
+import RegisterImg from '../../assets/login/image-cadastro-burger.svg'
+
 export const Container = styled.div`
+  display: flex;
   width: 100vw;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
 `
 
-export const RegisterImage = styled.img`
+export const ContainerImage = styled.div`
+  display: flex;
   width: 100vw;
-  height: 105vh;
-  display: block;
-  justify-content: center;
+  height: 100vh;
+  background: url('${RegisterImg}');  
+  background-size: cover;
 `
 
 export const ContainerItens = styled.div`
-  background-color: #373737;
-  width: 100vw;
-  height: 100vh;
-  padding: 20px 165px;
-  flex-direction: column;
   display: flex;
+  background-color: #373737;
+  width: 70vw;
+  height: 100vh;
+  padding: 16vh 19vh;
+  flex-direction: column;
   justify-content: center;
-
   img {
-    width: 338px;
-    height: 125px;
+    display: flex;
+    width: 47vh;
+    height: 17vh;
   }
-
   form {
     display: flex;
     flex-direction: column;
   }
 `
 export const H1 = styled.h1`
-  font-style: normal;
   font-weight: 500;
   font-size: 30px;
   line-height: 28px;
   color: #ffffff;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 5vh;
 `
 
 export const Label = styled.p`
   margin-top: ${props => (props.error ? '10px' : '17px')};
   margin-bottom: 5px;
-  margin-left: 20px;
+  margin-left: 2vh;
 
-  font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 14px;
@@ -58,8 +58,9 @@ export const Label = styled.p`
 `
 
 export const Input = styled.input`
-  width: 390px;
-  height: 38px;
+  display: flex;
+  width: 51vh;
+  height: 5vh;
 
   background: #ffffff;
   box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
@@ -69,22 +70,18 @@ export const Input = styled.input`
 `
 
 export const ErrorMessage = styled.p`
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   margin-top: 5px;
   margin-left: 5px;
   color: #cc1717;
 `
 
-export const LogarLink = styled.p`
-  font-style: normal;
+export const LoginLink = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-
-  margin-left: 110px;
-  margin-top: 32px;
+  margin-left: 2vh;
+  margin-top: 5vh;
   cursor: pointer;
 
   color: #ffffff;
