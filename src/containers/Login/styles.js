@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import LoginImg from '../../assets/login/image-login.svg'
-
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -9,15 +7,6 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   box-align: center;
-`
-
-export const ContainerImg = styled.div`
-display: flex;
-width: 100%;
-height: 100%;
-background: url('${LoginImg}');
-    
-    background-size: cover;
 `
 
 export const ContainerItens = styled.div`
