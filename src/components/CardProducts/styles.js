@@ -27,12 +27,20 @@ export const ProductName = styled.p`
   font-size: 1rem;
   color: #000000;
 `
-
+/*
+export const ProductDescription = styled.p`
+  margin-top: 5px;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  font-size: 1rem;
+  color: #000000;
+`
+*/
 export const ProductPrice = styled.p`
   font-weight: 500;
   font-size: 1rem;
   line-height: 21px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
   color: #000000;
 `

@@ -15,7 +15,7 @@ export function CardProducts ({ product }) {
     <Container>
       <Image src={product.url} alt='foto do produto' />
       <div>
-        <ProductName> {product.name} </ProductName>
+        <ProductName> {product.name} </ProductName> 
         <ProductPrice> {product.formatedPrice}</ProductPrice>
         <Button
           style={{ width: '1rem' }}
