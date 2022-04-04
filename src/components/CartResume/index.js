@@ -30,13 +30,12 @@ export function CartResume () {
     const order = cartProducts.map(product => {
       return { id: product.id, quantity: product.quantity }
     })
-    await toast.promise(api.post('/orders', { products: order }), {
+    await toast.promise(api.post('orders', { products: order }), {
       pending: 'Realizando o seu pedido...',
       success: 'Pedido realizado com sucesso',
       error: 'Falha ao tentar realizar o seu pedido'
     })
 
-    await api.post('/orders', { products: order })
   }
 
   return (
