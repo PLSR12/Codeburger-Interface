@@ -17,12 +17,15 @@ export const ItemContainer = styled.div`
   height: 50px;
   display: flex;
   align-items: center;
-  background: #565656;
+  background:${props => (props => props.isActive ? '#565656' : '' )} ;
   border-radius: 2px;
   margin: 8px;
   padding-left: 20px;
   .icon {
     color: #ffff;
+  }
+  .icon-logout {
+    color: #ffffff;
   }
 `
 
@@ -32,5 +35,5 @@ export const ListLink = styled(Link)`
   line-height: 19px;
   color: #ffffff;
   text-decoration: none;
-  padding-left:15px ;
+  padding-left: 15px;
 `
