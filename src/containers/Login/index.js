@@ -12,7 +12,7 @@ import { useUser } from '../../hooks/UserContext'
 
 import Logo from '../../assets/login/logo-codeburger.svg'
 
-import { Button } from '../../components'
+import { Button,ErrorMessage } from '../../components'
 
 import {
   Container,
@@ -21,7 +21,6 @@ import {
   Label,
   Input,
   ContainerButton,
-  ErrorMessage,
   CadastrarLink
 } from './styles'
 
