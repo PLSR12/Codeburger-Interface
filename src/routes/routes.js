@@ -18,6 +18,7 @@ function AppRoutes () {
         <Route exact path={paths.Order} component={Admin} isAdmin />
         <Route exact path={paths.Products} component={Admin} isAdmin />
         <Route exact path={paths.NewProduct} component={Admin} isAdmin />
+        <Route exact path={paths.EditProduct} component={Admin} isAdmin />
       </Switch>
     </Router>
   )
