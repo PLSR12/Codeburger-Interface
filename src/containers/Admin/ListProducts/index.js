@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+import paths from '../../../constants/paths'
 
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -17,6 +19,7 @@ import formatCurrency from '../../../utils/formatCurrency'
 
 function ListProducts () {
   const [products, setProducts] = useState([])
+  const { push } = useHistory()
 
   useEffect(() => {
     async function loadOrders () {
@@ -33,6 +36,10 @@ function ListProducts () {
     } else {
       return <CancelIcon style={{ color: '#CC1717' }} />
     }
+  }
+
+  function editProduct (product) {
+    push(paths.EditProduct, { product })
   }
 
   return (
@@ -60,7 +67,7 @@ function ListProducts () {
                   <TableCell>{formatCurrency(product.price)}</TableCell>
                   <TableCell align='center'>{isOffer(product.offer)}</TableCell>
                   <TableCell>
-                    <EditIconStyles />
+                    <EditIconStyles onClick={() => editProduct(product)} />
                   </TableCell>
                 </TableRow>
               ))}
