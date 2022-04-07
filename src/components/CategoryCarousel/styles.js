@@ -29,7 +29,7 @@ export const Container = styled.div`
 `
 
 export const CategoryImage = styled.img`
-  max-width:60vh;
+  max-width: 60vh;
   width: 40vh;
   max-height: 60vh;
   height: 11vh;
@@ -42,9 +42,11 @@ export const ContainerItems = styled.div`
 `
 
 export const Image = styled.img`
-  max-width: 28vh;
-  max-height: 20vw;
-  min-height:25vh;
+  width: 28vh;
+  min-width: 23vh;
+  height: 28vh;
+  min-height: 23vh;
+  border-radius: 1vw;
   border-radius: 1vw;
 `
 
@@ -52,7 +54,7 @@ export const Button = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  min-width: 230px;
   height: 50px;
   margin-top: 16px;
 

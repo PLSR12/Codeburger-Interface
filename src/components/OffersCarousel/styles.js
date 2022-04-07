@@ -4,6 +4,7 @@ export const Container = styled.div`
   background-color: #ffffff;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 35px;
   padding: 35px 0;
@@ -38,6 +39,7 @@ export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `
 
 export const H1 = styled.h1`
@@ -65,9 +67,10 @@ export const H2 = styled.h2`
 `
 
 export const Image = styled.img`
-  max-width: 28vh;
-  max-height: 20vw;
-  min-height: 25vh;
+  width: 28vh;
+  min-width: 23vh;
+  height: 28vh;
+  min-height: 23vh;
   border-radius: 1vw;
 `
 
