@@ -10,7 +10,7 @@ import api from '../../services/api'
 
 import Logo from '../../assets/login/logo-codeburger.svg'
 
-import { Button } from '../../components'
+import { Button,ErrorMessage } from '../../components'
 
 import {
   Container,
@@ -19,7 +19,6 @@ import {
   H1,
   Label,
   Input,
-  ErrorMessage,
   LoginLink
 } from './styles'
 
