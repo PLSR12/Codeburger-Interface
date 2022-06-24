@@ -1,7 +1,7 @@
 import React from 'react'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link,useHistory } from 'react-router-dom'
 
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
@@ -23,6 +23,9 @@ import {
 } from './styles'
 
 export function Register () {
+  const history = useHistory()
+
+
   const schema = Yup.object().shape({
     name: Yup.string().required('O seu nome é obrigatório'),
     email: Yup.string()
