@@ -62,7 +62,10 @@ export function Register () {
         toast.error('E-mail já cadastrado! Faça Login para continuar')
       }
     } catch (err) {}
-  }
+
+    setTimeout(() => {
+      history.push('/login')
+    }, 2500)  }
 
   return (
     <Container>
