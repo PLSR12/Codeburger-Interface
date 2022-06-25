@@ -54,7 +54,7 @@ export function Register () {
         {
           name: clientData.name,
           email: clientData.email,
-          password: clientData.password
+          password: clientData.password,
         },
         { validateStatus: () => true }
       )
