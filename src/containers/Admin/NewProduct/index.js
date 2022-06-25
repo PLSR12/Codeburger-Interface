@@ -11,7 +11,8 @@ import api from '../../../services/api'
 
 import { ErrorMessage } from '../../../components'
 
-import { Container, Label, Input, ButtonStyle, LabelUpload } from './styles'
+import { Container, Label, Input,   ContainerInput
+  ,ButtonStyle, LabelUpload } from './styles'
 
 function NewProduct () {
   const [fileName, setFileName] = useState(null)
@@ -24,6 +25,7 @@ function NewProduct () {
     productDataFormData.append('name', data.name)
     productDataFormData.append('price', data.price)
     productDataFormData.append('category_id', data.category.id)
+    productDataFormData.append('offer', data.offer)
     productDataFormData.append('file', data.file[0])
 
     await toast.promise(api.post('products', productDataFormData), {
@@ -111,6 +113,13 @@ function NewProduct () {
           ></Controller>
           <ErrorMessage>{errors.category?.message}</ErrorMessage>
         </div>
+        <ContainerInput>
+          <input
+            type='checkbox'
+            {...register('offer')}
+          />
+          <Label> Produto em oferta?</Label>
+        </ContainerInput>
         <ButtonStyle type='submit'> Adicionar Produto </ButtonStyle>
       </form>
     </Container>

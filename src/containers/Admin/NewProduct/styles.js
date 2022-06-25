@@ -51,3 +51,15 @@ export const LabelUpload = styled.label`
     opacity: 0;
   }
 `
+
+export const ContainerInput = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  input{
+    width: 15px;
+    height: 15px;
+    cursor:pointer;
+  }
+`
