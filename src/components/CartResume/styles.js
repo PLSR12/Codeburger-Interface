@@ -9,6 +9,11 @@ export const Container = styled.div`
   justify-content: space-between;
   flex-direction: column;
 
+  @media screen and (max-width: 1000px) {
+    width:80%;
+    margin:10%;
+  }
+
   .container-top {
     display: grid;
     grid-gap: 10px 60px;
