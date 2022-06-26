@@ -10,6 +10,7 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import api from '../../../services/api'
 
 import { ErrorMessage } from '../../../components'
+import maskCode from '../../../utils/maskCode'
 
 import {
   Container,
@@ -82,6 +83,7 @@ function EditProduct () {
           <Input
             type='text'
             {...register('name')}
+            onInput={maskCode}
             defaultValue={product.name}
           />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
@@ -91,6 +93,7 @@ function EditProduct () {
           <Input
             type='number'
             {...register('price')}
+            onInput={maskCode}
             defaultValue={product.price}
           />
           <ErrorMessage>{errors.price?.message}</ErrorMessage>
