@@ -27,8 +27,8 @@ export const ItemContainer = styled.div`
   align-items: center;
   background:${props => (props => props.isActive ? '#565656' : '' )} ;
   border-radius: 2px;
-  margin: 8px;
-  padding-left: 10px;
+  margin: 10px;
+  padding: 15px;
 
   @media screen and (max-width: 1000px) {
     height:100px;
