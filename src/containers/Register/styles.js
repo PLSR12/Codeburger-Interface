@@ -21,7 +21,7 @@ export const ContainerItens = styled.div`
     width: 47vh;
     height: 17vh;
   }
-  p{
+  h1{
     font-style: normal;
   font-weight: 500;
   font-size: 30px;
