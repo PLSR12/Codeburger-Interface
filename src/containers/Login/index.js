@@ -17,7 +17,6 @@ import { Button,ErrorMessage } from '../../components'
 import {
   Container,
   ContainerItens,
-  H1,
   Label,
   Input,
   ContainerButton,
@@ -68,7 +67,7 @@ export function Login () {
     <Container>
       <ContainerItens>
         <img src={Logo} alt='logo-codeburger' />
-        <H1>Login</H1>
+        <h1>Login</h1>
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label> Email</Label>
           <Input

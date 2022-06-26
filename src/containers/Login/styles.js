@@ -21,20 +21,20 @@ export const ContainerItens = styled.div`
     width: 47vh;
     height: 17vh;
   }
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-`
-export const H1 = styled.h1`
-  font-style: normal;
+  p {
+    font-style: normal;
   font-weight: 500;
   font-size: 30px;
   line-height: 28px;
   color: #ffffff;
   text-align: center;
   margin-top: 11vh;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 `
 
 export const Label = styled.p`

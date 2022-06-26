@@ -16,7 +16,6 @@ import {
   Container,
   ContainerItens,
   ContainerButton,
-  H1,
   Label,
   Input,
   LoginLink
@@ -74,7 +73,7 @@ export function Register () {
     <Container>
       <ContainerItens>
         <img src={Logo} alt='logo-codeburger' />
-        <H1>Cadastre-se</H1>
+        <h1>Cadastre-se</h1>
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label error={errors.name?.message}> Nome</Label>
           <Input
