@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: #ffffff;
-  padding: 15px;
+  padding: 25px;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
   border-radius: 20px;
   display: flex;
@@ -42,6 +42,10 @@ export const Container = styled.div`
 
   .tax-price {
     grid-area: tax-price;
+
+    @media screen and (max-width: 1000px) {
+      margin-top:10px;
+    }
   }
 
   .container-bottom {
@@ -50,5 +54,6 @@ export const Container = styled.div`
       flex-direction: row;
       justify-content:space-between;
       font-size:24px;
+      gap:20px;
   }
 `

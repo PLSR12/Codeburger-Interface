@@ -16,12 +16,19 @@ export const ContainerLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 4vh;
+  @media screen and (max-width: 1000px) {
+  gap:2vh;
+}
 `
 
 export const ContainerRight = styled.div`
   display: flex;
   align-items: center;
   gap: 3vh;
+
+@media screen and (max-width: 1000px) {
+  gap:2vh;
+}
 `
 
 export const ContainerText = styled.div`

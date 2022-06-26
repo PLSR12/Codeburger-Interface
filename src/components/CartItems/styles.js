@@ -5,7 +5,7 @@ export const Container = styled.div`
   border-radius: 20px;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
   padding: 10px;
-  width: fit-content;
+  width: fit-content;  
 `
 
 export const Header = styled.div`
@@ -22,14 +22,14 @@ export const Header = styled.div`
 export const Body = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  width: max-content;
+  width: 100%;
   grid-gap: 10px 15px;
   padding: 10px;
   
 
   @media screen and (max-width: 1000px) {
-    width:fit-content;
-    grid-gap: 10px 15px;
+    width:100%;
+    grid-gap: 10px 10px;
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -45,10 +45,14 @@ export const Body = styled.div`
   p {
     font-size: 1rem;
     color: #000000;
+    @media screen and (max-width: 1000px) {
+    font-size: 0.8rem;
+    }
   }
   .quantity-container {
     display: flex;
     gap: 20px;
+    
     button {
       height: 30px;
       background: transparent;
