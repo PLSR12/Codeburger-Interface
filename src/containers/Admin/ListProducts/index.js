@@ -24,7 +24,6 @@ function ListProducts () {
   useEffect(() => {
     async function loadOrders () {
       const { data } = await api.get('products')
-      console.log(data)
       setProducts(data)
     }
     loadOrders()

@@ -6,7 +6,6 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
-import ReactSelect from 'react-select'
 
 import api from '../../../services/api'
 import status from './order-status'
@@ -56,7 +55,7 @@ function Orders () {
     ) 
     setFilteredOrders(newFilteredOrders)
     }
-  }, [orders])
+  }, [orders,activeStatus])
   
   function handleStatus (status) {
     if (status.id === 1) {
