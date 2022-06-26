@@ -19,6 +19,7 @@ function AppRoutes () {
         <PrivateRoute exact path={paths.Products} component={Admin} isAdmin />
         <PrivateRoute exact path={paths.NewProduct} component={Admin} isAdmin />
         <PrivateRoute exact path={paths.EditProduct} component={Admin} isAdmin />
+        <PrivateRoute exact path={paths.NewCategorie} component={Admin} isAdmin />
       </Switch>
     </Router>
   )
