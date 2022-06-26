@@ -103,6 +103,33 @@ function Row ({ row, setOrders, orders }) {
                 </TableBody>
               </Table>
             </Box>
+            <Box sx={{ margin: 1 }}>
+              <Typography variant='h6' gutterBottom component='div'>
+                Dados do Cliente
+              </Typography>
+              <Table size='small' aria-label='purchases'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Endereço</TableCell>
+                    <TableCell>Complemento</TableCell>
+                    <TableCell>Contato</TableCell>
+                    <TableCell></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {row.products.map(productRow => (
+                    <TableRow key={productRow.id}>
+                      <TableCell component='th' scope='row'>
+                        Rua Nossa Senhora das Mercês
+                      </TableCell>
+                      <TableCell>Número 12</TableCell>
+                      <TableCell>21 9 9999-9999</TableCell>
+                      <TableCell></TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
           </Collapse>
         </TableCell>
       </TableRow>
