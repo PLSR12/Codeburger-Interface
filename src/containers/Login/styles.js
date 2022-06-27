@@ -63,7 +63,6 @@ export const CadastrarLink = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  margin-left: -12vw;
   margin-top: 5vh;
   cursor: pointer;
   color: #ffffff;

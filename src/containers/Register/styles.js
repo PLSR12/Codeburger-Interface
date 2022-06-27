@@ -63,7 +63,6 @@ export const LoginLink = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  margin-left: -15vw;
   margin-top: 4vh;
   text-decoration: none;
   cursor: pointer;

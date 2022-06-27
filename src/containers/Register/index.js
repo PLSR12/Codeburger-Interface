@@ -114,13 +114,13 @@ export function Register () {
               Entrar
             </Button>
           </ContainerButton>
-        </form>
-        <LoginLink>
+          <LoginLink>
           Já possui conta? {''}
           <Link style={{ color: 'white', textDecoration: 'none' }} to='/login'>
             Entre
           </Link>
         </LoginLink>
+        </form>
       </ContainerItens>
     </Container>
   )

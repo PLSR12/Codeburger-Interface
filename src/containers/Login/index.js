@@ -89,8 +89,7 @@ export function Login () {
               Entrar
             </Button>
           </ContainerButton>
-        </form>
-        <CadastrarLink>
+          <CadastrarLink>
           Não possui conta? {''}
           <Link
             style={{
@@ -103,6 +102,8 @@ export function Login () {
             Se cadastre
           </Link>
         </CadastrarLink>
+        </form>
+       
       </ContainerItens>
     </Container>
   )
