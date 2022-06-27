@@ -34,8 +34,44 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    
+  div {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    flex: 1 1 0%;
+
+    svg {
+      position: absolute;
+      left: 12px;
+      top: 5px;
+    }
+
+    span {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+
+      .iconVisiblity {
+        position: relative;
+        right: 0;
+        top: 18px;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-12px) translateY(-16px);
+        transition: all 0.5s ease;
+
+        :hover {
+          fill: #000;
+        }
+      }
+    }
   }
-`
+}
+  `
 
 export const Label = styled.p`
   margin-top: 17px;

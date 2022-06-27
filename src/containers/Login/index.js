@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { Link, useHistory } from 'react-router-dom'
@@ -11,6 +11,8 @@ import api from '../../services/api'
 import { useUser } from '../../hooks/UserContext'
 
 import Logo from '../../assets/login/logo-codeburger.svg'
+import {MdVisibility, MdVisibilityOff } from 'react-icons/md'
+
 
 import { Button,ErrorMessage } from '../../components'
 
@@ -26,6 +28,8 @@ import {
 export function Login () {
   const history = useHistory()
   const { putUserData } = useUser()
+  const [showPassword, setShowPassword] = useState(false)
+
 
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -63,6 +67,11 @@ export function Login () {
     }, 2000)
   }
 
+  
+  const handleShowPassword = () => {
+    setShowPassword((show) => !show)
+  }
+
   return (
     <Container>
       <ContainerItens>
@@ -78,11 +87,31 @@ export function Login () {
           <ErrorMessage> {errors.email?.message}</ErrorMessage>
 
           <Label> Senha</Label>
-          <Input
-            type='password'
-            {...register('password')}
-            error={errors.password?.message}
+          <div>
+            <Input
+              type={showPassword ? 'text' : 'password'}
+              {...register('password')}
+              error={errors.password?.message}
           />
+            <span>
+              {showPassword ? (
+                <MdVisibility
+                  color="#c4cdd5"
+                  size={22}
+                  onClick={handleShowPassword}
+                  className="iconVisiblity"
+                />
+              ) : (
+                <MdVisibilityOff
+                  color="#c4cdd5"
+                  size={22}
+                  onClick={handleShowPassword}
+                  className="iconVisiblity"
+                />
+              )}
+            </span>
+          </div>
+          
           <ErrorMessage> {errors.password?.message}</ErrorMessage>
           <ContainerButton>
             <Button type='submit' style={{ marginTop: '6vh' }}>

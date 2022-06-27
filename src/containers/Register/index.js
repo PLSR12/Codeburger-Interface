@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { Link,useHistory } from 'react-router-dom'
@@ -9,6 +9,7 @@ import * as Yup from 'yup'
 import api from '../../services/api'
 
 import Logo from '../../assets/login/logo-codeburger.svg'
+import {MdVisibility, MdVisibilityOff } from 'react-icons/md'
 
 import { Button,ErrorMessage } from '../../components'
 
@@ -23,7 +24,7 @@ import {
 
 export function Register () {
   const history = useHistory()
-
+  const [showPassword, setShowPassword] = useState(false)
 
   const schema = Yup.object().shape({
     name: Yup.string().required('O seu nome é obrigatório'),
@@ -69,6 +70,12 @@ export function Register () {
       history.push('/login')
     }, 2500)  }
 
+
+    const handleShowPassword = () => {
+      setShowPassword((show) => !show)
+    }
+  
+
   return (
     <Container>
       <ContainerItens>
@@ -92,19 +99,58 @@ export function Register () {
           <ErrorMessage> {errors.email?.message}</ErrorMessage>
 
           <Label error={errors.password?.message}> Senha</Label>
-          <Input
-            type='password'
-            {...register('password')}
-            error={errors.password?.message}
+          <div>
+            <Input
+              type={showPassword ? 'text' : 'password'}
+              {...register('password')}
+              error={errors.password?.message}
           />
+            <span>
+              {showPassword ? (
+                <MdVisibility
+                  color="#c4cdd5"
+                  size={22}
+                  onClick={handleShowPassword}
+                  className="iconVisiblity"
+                />
+              ) : (
+                <MdVisibilityOff
+                  color="#c4cdd5"
+                  size={22}
+                  onClick={handleShowPassword}
+                  className="iconVisiblity"
+                />
+              )}
+            </span>
+          </div>
           <ErrorMessage> {errors.password?.message}</ErrorMessage>
 
           <Label error={errors.confirmPassword?.message}>Confirme Senha</Label>
-          <Input
-            type='password'
-            {...register('confirmPassword')}
-            error={errors.confirmPassword?.message}
+         
+          <div>
+            <Input
+              type={showPassword ? 'text' : 'password'}
+              {...register('confirmPassword')}
+              error={errors.confirmPassword?.message}
           />
+            <span>
+              {showPassword ? (
+                <MdVisibility
+                  color="#c4cdd5"
+                  size={22}
+                  onClick={handleShowPassword}
+                  className="iconVisiblity"
+                />
+              ) : (
+                <MdVisibilityOff
+                  color="#c4cdd5"
+                  size={22}
+                  onClick={handleShowPassword}
+                  className="iconVisiblity"
+                />
+              )}
+            </span>
+          </div> 
           <ErrorMessage> {errors.confirmPassword?.message}</ErrorMessage>
           <ContainerButton>
             <Button
