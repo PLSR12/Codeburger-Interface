@@ -18,12 +18,17 @@ import {
 
 import Carousel from 'react-elastic-carousel'
 
+import GenericModal from '../../components/Modal/GenericModal'
+import { ModalContentLoading } from '../../components/Modal/styles'
+import ImgLoading from '../../assets/img/loading.gif'
 import api from '../../services/api'
 import formatCurrency from '../../utils/formatCurrency'
 
 export function OffersCarousel () {
   const [offers, setOffers] = useState([])
   const { putProductsInCart } = useCart()
+  const [modalIsOpen, setModalIsOpen] = useState(true)
+
   const { push } = useHistory()
 
   useEffect(() => {
@@ -37,6 +42,8 @@ export function OffersCarousel () {
         })
 
       setOffers(onlyOffers)
+      setModalIsOpen(false)
+
     }
 
     loadOffers()
@@ -52,6 +59,12 @@ export function OffersCarousel () {
 
   return (
     <Container>
+      <GenericModal  isOpen={modalIsOpen}>
+    <ModalContentLoading >
+              <h2>Carregando...</h2>
+              <img src={ImgLoading} alt="Loading" />
+            </ModalContentLoading>
+      </GenericModal>
       <OffersImage src={OffersText} alt='banner da home' />
 
       <Carousel
