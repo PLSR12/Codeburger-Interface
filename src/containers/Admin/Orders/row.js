@@ -14,12 +14,14 @@ import React from 'react'
 import { toast } from 'react-toastify'
 
 import api from '../../../services/api'
+import { useUser } from '../../../hooks/UserContext'
 import status from './order-status'
 
 import { ReactSelectStyle } from './styles'
 
 function Row ({ row, setOrders, orders }) {
   const [open, setOpen] = React.useState(false)
+  const { logout,userData } = useUser()
   const [isLoading, setIsLoading] = React.useState(false)
 
   async function setNewStatus (id, status) {
@@ -118,19 +120,17 @@ function Row ({ row, setOrders, orders }) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.products.map(productRow => (
-                    <TableRow key={productRow.id}>
+                    <TableRow >
                        <TableCell component='th' scope='row'>
-                      {row.name}
+                      {userData.name}
                       </TableCell>
                       <TableCell component='th' scope='row'>
-                      {row.address}
+                      {userData.address}
                       </TableCell>
-                      <TableCell>{row.complement}</TableCell>
-                      <TableCell>{row.contact}</TableCell>
+                      <TableCell>{userData.complement}</TableCell>
+                      <TableCell>{userData.contact}</TableCell>
                       <TableCell></TableCell>
                     </TableRow>
-                  ))}
                 </TableBody>
               </Table>
             </Box>
