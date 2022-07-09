@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   box-align: center;
@@ -13,22 +13,23 @@ export const ContainerItens = styled.div`
   display: flex;
   background-color: #373737;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding:30px;
   img {
     width: 47vh;
     height: 17vh;
   }
   h1{
     font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 28px;
-  color: #ffffff;
-  text-align: center;
-  margin-top: 10vh;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 28px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10vh;
   }
   form {
     display: flex;
@@ -47,7 +48,7 @@ export const ContainerItens = styled.div`
     svg {
       position: absolute;
       left: 12px;
-      top: 5px;
+      top: 10px;
     }
 
     span {

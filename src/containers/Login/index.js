@@ -124,7 +124,8 @@ export function Login () {
             style={{
               color: 'white',
               alignItems: 'center',
-              textDecoration: 'none'
+              fontWeight: 'bold',
+              textDecoration:'none'
             }}
             to='/cadastro'
           >

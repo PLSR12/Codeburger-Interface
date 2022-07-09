@@ -110,6 +110,7 @@ function Row ({ row, setOrders, orders }) {
               <Table size='small' aria-label='purchases'>
                 <TableHead>
                   <TableRow>
+                    <TableCell>Nome</TableCell>
                     <TableCell>Endereço</TableCell>
                     <TableCell>Complemento</TableCell>
                     <TableCell>Contato</TableCell>
@@ -119,11 +120,14 @@ function Row ({ row, setOrders, orders }) {
                 <TableBody>
                   {row.products.map(productRow => (
                     <TableRow key={productRow.id}>
-                      <TableCell component='th' scope='row'>
-                        Rua Nossa Senhora das Mercês
+                       <TableCell component='th' scope='row'>
+                      {row.name}
                       </TableCell>
-                      <TableCell>Número 12</TableCell>
-                      <TableCell>21 9 9999-9999</TableCell>
+                      <TableCell component='th' scope='row'>
+                      {row.address}
+                      </TableCell>
+                      <TableCell>{row.complement}</TableCell>
+                      <TableCell>{row.contact}</TableCell>
                       <TableCell></TableCell>
                     </TableRow>
                   ))}

@@ -9,6 +9,9 @@ import BannerProduct from '../../assets/home/banner-productpage(2).svg'
 import formatCurrency from '../../utils/formatCurrency'
 
 import { CardProducts } from '../../components'
+import GenericModal from '../../components/Modal/GenericModal'
+import { ModalContentLoading } from '../../components/Modal/styles'
+import ImgLoading from '../../assets/img/loading.gif'
 
 import {
   Container,
@@ -28,6 +31,8 @@ export function Products ({ location: { state } }) {
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProduct] = useState([])
   const [activeCategory, setActiveCategory] = useState(categoryId)
+  const [modalIsOpen, setModalIsOpen] = useState(true)
+
 
   useEffect(() => {
     async function loadCategories () {
@@ -36,6 +41,9 @@ export function Products ({ location: { state } }) {
       const newCategories = [{ id: 0, name: 'Todas' }, ...data]
 
       setCategories(newCategories)
+
+      setModalIsOpen(false)
+
     }
     async function loadProducts () {
       const { data: allProducts } = await api.get('products')
@@ -45,6 +53,7 @@ export function Products ({ location: { state } }) {
       })
 
       setProducts(newProducts)
+      setModalIsOpen(false)
     }
 
     loadProducts()
@@ -64,8 +73,15 @@ export function Products ({ location: { state } }) {
   }, [activeCategory, products])
 
   return (
+    <>
+    <GenericModal  isOpen={modalIsOpen}>
+    <ModalContentLoading >
+              <h2>Carregando...</h2>
+              <img src={ImgLoading} alt="Loading" />
+            </ModalContentLoading>
+      </GenericModal>
     <Container>
-      <HomeImg src={BannerProduct} alt='banner produtos' />
+      <HomeImg src={BannerProduct} alt='banner produtos' />   
       <CategoriesMenu>
         {categories &&
           categories.map(category => (
@@ -81,7 +97,6 @@ export function Products ({ location: { state } }) {
             </CategoryButton>
           ))}
       </CategoriesMenu>
-
       <ProductsContainer>
         {filteredProducts &&
           filteredProducts.map(product => (
@@ -89,6 +104,8 @@ export function Products ({ location: { state } }) {
           ))}
       </ProductsContainer>
     </Container>
+    </>
+
   )
 }
 

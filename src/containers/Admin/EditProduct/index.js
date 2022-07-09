@@ -12,6 +12,10 @@ import api from '../../../services/api'
 import { ErrorMessage } from '../../../components'
 import maskCode from '../../../utils/maskCode'
 
+import GenericModal from '../../../components/Modal/GenericModal'
+import { ModalContentLoading } from '../../../components/Modal/styles'
+import ImgLoading from '../../../assets/img/loading.gif'
+
 import {
   Container,
   Label,
@@ -24,6 +28,7 @@ import {
 function EditProduct () {
   const [fileName, setFileName] = useState(null)
   const [categories, setCategories] = useState([])
+  const [modalIsOpen, setModalIsOpen] = useState(true)
   const {
     push,
     location: {
@@ -71,12 +76,19 @@ function EditProduct () {
       const { data } = await api.get('categories')
 
       setCategories(data)
+      setModalIsOpen(false)
     }
     loadCategories()
   }, [])
 
   return (
     <Container>
+      <GenericModal  isOpen={modalIsOpen}>
+    <ModalContentLoading >
+              <h2>Carregando...</h2>
+              <img src={ImgLoading} alt="Loading" />
+            </ModalContentLoading>
+      </GenericModal>
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label>Nome:</Label>

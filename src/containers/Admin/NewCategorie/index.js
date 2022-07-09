@@ -9,6 +9,8 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import api from '../../../services/api'
 
 import {ErrorMessage} from '../../../components'
+import maskCode from '../../../utils/maskCode'
+
 
 import { Container, Label, Input, ButtonStyle, LabelUpload } from './styles'
 
@@ -50,7 +52,7 @@ function NewCategorie() {
       <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label>Nome:</Label>
-          <Input type="text" {...register('name')} />
+          <Input type="text"  onInput={maskCode} {...register('name')} />
           <ErrorMessage>{errors.name?.message}</ErrorMessage>
           <div>
             <LabelUpload>

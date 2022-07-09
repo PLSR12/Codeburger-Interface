@@ -24,7 +24,7 @@ export const Label = styled.p`
 `
 
 export const Input = styled.input`
-  width: 100%;
+  width:280px;
   height: 40px;
   background: #ffffff;
   padding-left:10px;
@@ -32,6 +32,10 @@ export const Input = styled.input`
   border-radius: 8px;
   outline: none;
   border: none;
+
+  @media screen and (max-width: 1000px) {
+    width:100%;
+  }
 `
 
 export const ButtonStyle = styled(Button)`

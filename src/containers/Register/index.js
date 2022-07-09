@@ -28,9 +28,13 @@ export function Register () {
 
   const schema = Yup.object().shape({
     name: Yup.string().required('O seu nome é obrigatório'),
+    address: Yup.string().required('O seu endreço é obrigatório'),
+    complement: Yup.string().required('O complemento do endereço é obrigatório'),
+    contact: Yup.number().required('O seu contato é obrigatório'),
     email: Yup.string()
       .email('Digite um email válido')
       .required('O email é obrigatório'),
+
     password: Yup.string()
       .required('A senha é obrigatória')
       .min(6, 'A senha deve ter pelo menos 6 digítos'),
@@ -53,6 +57,9 @@ export function Register () {
         'users',
         {
           name: clientData.name,
+          address: clientData.address,
+          complement: clientData.complement,
+          contact: clientData.contact,
           email: clientData.email,
           password: clientData.password,
         },
@@ -90,6 +97,27 @@ export function Register () {
           />
           <ErrorMessage> {errors.name?.message}</ErrorMessage>
 
+          <Label error={errors.address?.message}> Endereço</Label>
+          <Input
+            type='text'
+            {...register('address')}
+            error={errors.address?.message}
+          />
+          <ErrorMessage> {errors.address?.message}</ErrorMessage>
+          <Label error={errors.complement?.message}> Complemento</Label>
+          <Input
+            type='text'
+            {...register('complement')}
+            error={errors.complement?.message}
+          />
+          <ErrorMessage> {errors.complement?.message}</ErrorMessage>
+          <Label error={errors.contact?.message}> Contato</Label>
+          <Input
+            type='number'
+            {...register('contact')}
+            error={errors.contact?.message}
+          />
+          <ErrorMessage> {errors.contact?.message}</ErrorMessage>
           <Label error={errors.email?.message}> Email</Label>
           <Input
             type='email'
@@ -162,7 +190,7 @@ export function Register () {
           </ContainerButton>
           <LoginLink>
           Já possui conta? {''}
-          <Link style={{ color: 'white', textDecoration: 'none' }} to='/login'>
+          <Link style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }} to='/login'>
             Entre
           </Link>
         </LoginLink>

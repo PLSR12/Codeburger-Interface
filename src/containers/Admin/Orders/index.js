@@ -12,6 +12,10 @@ import status from './order-status'
 import Row from './row'
 import formatDate from '../../../utils/formatDate'
 
+import GenericModal from '../../../components/Modal/GenericModal'
+import { ModalContentLoading } from '../../../components/Modal/styles'
+import ImgLoading from '../../../assets/img/loading.gif'
+
 import { Container, Menu, LinkMenu } from './styles'
 
 function Orders () {
@@ -19,6 +23,8 @@ function Orders () {
   const [filteredOrders, setFilteredOrders] = useState([])
   const [activeStatus, setActiveStatus] = useState(1)
   const [rows, setRows] = useState([])
+  const [modalIsOpen, setModalIsOpen] = useState(true)
+
 
   useEffect(() => {
     async function loadOrders () {
@@ -26,6 +32,8 @@ function Orders () {
 
       setOrders(data)
       setFilteredOrders(data)
+      setModalIsOpen(false)
+
     }
     loadOrders()
   }, [])
@@ -33,12 +41,17 @@ function Orders () {
   function createData (order) {
     return {
       name: order.user.name,
+      address:order.user.address,
+      complement: order.user.complement,
+      contact:order.user.contact,
       orderId: order._id,
       date: formatDate(order.createdAt),
       status: order.status,
       products: order.products
     }
+
   }
+  
 
   useEffect(() => {
     const newRows = filteredOrders.map(ord => createData(ord))
@@ -70,6 +83,12 @@ function Orders () {
 
   return (
     <Container>
+      <GenericModal  isOpen={modalIsOpen}>
+    <ModalContentLoading >
+              <h2>Carregando...</h2>
+              <img src={ImgLoading} alt="Loading" />
+            </ModalContentLoading>
+      </GenericModal>
       <Menu>
         {status &&
           status.map(status => (
